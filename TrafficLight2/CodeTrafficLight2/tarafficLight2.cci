@@ -1,0 +1,11 @@
+VERSION:3 SOURCE_TIMESTAMP:578BBDF7
+NODE:I LEVEL:0 LINE:1 "F:\programs\codevison\setupOfit\inc\mega16.h"
+NODE:I LEVEL:0 LINE:2 "F:\programs\codevison\setupOfit\inc\delay.h"
+NODE:M LEVEL:0 LINE:4 "SEG_A_PORT"
+NODE:M LEVEL:0 LINE:5 "SEG_A_DIR"
+NODE:M LEVEL:0 LINE:7 "SEG_B_PORT"
+NODE:M LEVEL:0 LINE:8 "SEG_B_DIR"
+NODE:V LEVEL:0 LINE:10 "segments -> RAM:????"
+NODE:F LEVEL:0 LINE:23 "displayDigit(unsigned char digit,unsigned char position)"
+NODE:F LEVEL:0 LINE:32 "displayNumber(unsigned char number)"
+NODE:F LEVEL:0 LINE:40 "main(void)"

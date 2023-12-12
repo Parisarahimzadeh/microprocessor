@@ -1,0 +1,124 @@
+#include <mega16.h>
+#include <delay.h>
+
+#define SEG_A_PORT PORTC 
+#define SEG_A_DIR DDRC
+
+#define SEG_B_PORT PORTD
+#define SEG_B_DIR DDRD
+
+unsigned char segments[10] = {
+    0b00111111, // 0
+    0b00000110, // 1
+    0b01011011, // 2
+    0b01001111, // 3
+    0b01100110, // 4
+    0b01101101, // 5
+    0b01111101, // 6
+    0b00000111, // 7
+    0b01111111, // 8
+    0b01101111 // 9
+};
+
+void displayDigit(unsigned char digit, unsigned char position) {
+    if (position == 0) {
+        SEG_A_PORT = segments[digit]; 
+    } else {
+        SEG_B_PORT = segments[digit]; 
+    }
+    delay_ms(50); 
+}
+
+void displayNumber(unsigned char number) {
+    unsigned char tens = number / 10; 
+    unsigned char ones = number % 10; 
+
+    displayDigit(ones, 0); 
+    displayDigit(tens, 1); 
+}
+
+void main() {
+ unsigned char remainingTime = 60;
+ unsigned char nextTime = 11;
+    SEG_A_DIR = 0xFF; 
+    SEG_B_DIR = 0xFF;
+    DDRA=0XFF;
+    
+    
+    
+    
+    
+ while (1) {
+        
+    displayNumber(remainingTime);
+
+      
+
+    remainingTime--;
+    delay_ms(100);
+    
+   if (nextTime== 11) {
+        PORTA.0 = 0;
+        PORTA.1 = 0;
+        PORTA.2 = 1;
+        PORTA.3 = 1;
+        PORTA.4 = 0;
+        PORTA.5 = 0;}
+         
+    if (nextTime== 50) {
+        PORTA.0 = 0;
+        PORTA.1 = 1;
+        PORTA.2 = 0;
+        PORTA.3 = 1;
+        PORTA.4 = 0;
+        PORTA.5 = 0;}  
+     
+
+    
+  
+     if (nextTime== 10) {
+         PORTA.0 = 1;
+        PORTA.1 = 0;
+        PORTA.2 = 0;
+        PORTA.3 = 0;
+        PORTA.4 = 1;
+        PORTA.5 = 0; }
+    
+    if (nextTime== 60) { 
+        
+        PORTA.0 = 1;
+        PORTA.1 = 0;
+        PORTA.2 = 0;
+        PORTA.3 = 0;
+        PORTA.4 = 0;
+        PORTA.5 = 1;
+    }
+       
+       
+      
+      
+      
+   if (remainingTime == 0) {
+        remainingTime = nextTime; 
+        if (nextTime == 11) {
+            nextTime = 50;
+        } else if(nextTime==50) {
+            nextTime = 10;
+            
+        } else if(nextTime==10){
+            nextTime = 60;
+            PORTD=0b00000001;
+            PORTC=0b00000001;
+            PORTA=0b00000001;
+        } else{
+            PORTD=0b00000001;
+            PORTC=0b00000001;
+            PORTA=0b00000001;
+        }
+     
+     
+
+         }
+
+   
+} }
