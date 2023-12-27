@@ -1,0 +1,6 @@
+VERSION:3 SOURCE_TIMESTAMP:579BB15B
+NODE:I LEVEL:0 LINE:8 "F:\programs\codevison\setupOfit\inc\mega32.h"
+NODE:I LEVEL:0 LINE:9 "F:\programs\codevison\setupOfit\inc\delay.h"
+NODE:C LEVEL:0 LINE:11 "digits -> FLASH"
+NODE:V LEVEL:0 LINE:13 "counter -> R4,R5"
+NODE:F LEVEL:0 LINE:15 "main(void)"
