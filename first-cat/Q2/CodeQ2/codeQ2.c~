@@ -25,7 +25,7 @@ while (1)
       }
         
       if(PIND.0==1){
-        if(count>=0 && counter<=55){
+        if(count>=0 && count<=55){
             PORTA = digits[count / 10];
             PORTB = digits[count % 10];
             if(PIND.1 == 0){

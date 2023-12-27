@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.30  E:\microprocessor\first-cat\Q2\CodeQ2\Debug\List\codeQ2.asm Wed Dec 27 22:22:35 2023
+AVRASM ver. 2.1.30  E:\microprocessor\first-cat\Q2\CodeQ2\Debug\List\codeQ2.asm Wed Dec 27 23:34:04 2023
 
 E:\microprocessor\first-cat\Q2\CodeQ2\Debug\List\codeQ2.asm(1088): warning: Register r4 already defined by the .DEF directive
 E:\microprocessor\first-cat\Q2\CodeQ2\Debug\List\codeQ2.asm(1089): warning: Register r5 already defined by the .DEF directive
@@ -1101,7 +1101,7 @@ E:\microprocessor\first-cat\Q2\CodeQ2\Debug\List\codeQ2.asm(1089): warning: Regi
                  __START_OF_CODE:
                  
                  ;INTERRUPT VECTORS
-000000 940c 0037 	JMP  __RESET
+000000 940c 0034 	JMP  __RESET
 000002 940c 0000 	JMP  0x00
 000004 940c 0000 	JMP  0x00
 000006 940c 0000 	JMP  0x00
@@ -1128,90 +1128,87 @@ E:\microprocessor\first-cat\Q2\CodeQ2\Debug\List\codeQ2.asm(1089): warning: Regi
 00002b 4f5b
 00002c ed66
 00002d 07fd      	.DB  0xBF,0x6,0x5B,0x4F,0x66,0xED,0xFD,0x7
-00002e efff
-00002f fcf7
-000030 5cb9
-000031 f1f9      	.DB  0xFF,0xEF,0xF7,0xFC,0xB9,0x5C,0xF9,0xF1
+00002e efff      	.DB  0xFF,0xEF
                  
                  ;GLOBAL REGISTER VARIABLES INITIALIZATION
                  __REG_VARS:
-000032 0000      	.DB  0x0,0x0
+00002f 0000      	.DB  0x0,0x0
                  
                  
                  __GLOBAL_INI_TBL:
-000033 0002      	.DW  0x02
-000034 0004      	.DW  0x04
-000035 0064      	.DW  __REG_VARS*2
+000030 0002      	.DW  0x02
+000031 0004      	.DW  0x04
+000032 005e      	.DW  __REG_VARS*2
                  
                  _0xFFFFFFFF:
-000036 0000      	.DW  0
+000033 0000      	.DW  0
                  
                  #define __GLOBAL_INI_TBL_PRESENT 1
                  
                  __RESET:
-000037 94f8      	CLI
-000038 27ee      	CLR  R30
-000039 bbec      	OUT  EECR,R30
+000034 94f8      	CLI
+000035 27ee      	CLR  R30
+000036 bbec      	OUT  EECR,R30
                  
                  ;INTERRUPT VECTORS ARE PLACED
                  ;AT THE START OF FLASH
-00003a e0f1      	LDI  R31,1
-00003b bffb      	OUT  GICR,R31
-00003c bfeb      	OUT  GICR,R30
-00003d bfe5      	OUT  MCUCR,R30
+000037 e0f1      	LDI  R31,1
+000038 bffb      	OUT  GICR,R31
+000039 bfeb      	OUT  GICR,R30
+00003a bfe5      	OUT  MCUCR,R30
                  
                  ;CLEAR R2-R14
-00003e e08d      	LDI  R24,(14-2)+1
-00003f e0a2      	LDI  R26,2
-000040 27bb      	CLR  R27
+00003b e08d      	LDI  R24,(14-2)+1
+00003c e0a2      	LDI  R26,2
+00003d 27bb      	CLR  R27
                  __CLEAR_REG:
-000041 93ed      	ST   X+,R30
-000042 958a      	DEC  R24
-000043 f7e9      	BRNE __CLEAR_REG
+00003e 93ed      	ST   X+,R30
+00003f 958a      	DEC  R24
+000040 f7e9      	BRNE __CLEAR_REG
                  
                  ;CLEAR SRAM
-000044 e080      	LDI  R24,LOW(__CLEAR_SRAM_SIZE)
-000045 e098      	LDI  R25,HIGH(__CLEAR_SRAM_SIZE)
-000046 e6a0      	LDI  R26,__SRAM_START
+000041 e080      	LDI  R24,LOW(__CLEAR_SRAM_SIZE)
+000042 e098      	LDI  R25,HIGH(__CLEAR_SRAM_SIZE)
+000043 e6a0      	LDI  R26,__SRAM_START
                  __CLEAR_SRAM:
-000047 93ed      	ST   X+,R30
-000048 9701      	SBIW R24,1
-000049 f7e9      	BRNE __CLEAR_SRAM
+000044 93ed      	ST   X+,R30
+000045 9701      	SBIW R24,1
+000046 f7e9      	BRNE __CLEAR_SRAM
                  
                  ;GLOBAL VARIABLES INITIALIZATION
-00004a e6e6      	LDI  R30,LOW(__GLOBAL_INI_TBL*2)
-00004b e0f0      	LDI  R31,HIGH(__GLOBAL_INI_TBL*2)
+000047 e6e0      	LDI  R30,LOW(__GLOBAL_INI_TBL*2)
+000048 e0f0      	LDI  R31,HIGH(__GLOBAL_INI_TBL*2)
                  __GLOBAL_INI_NEXT:
-00004c 9185      	LPM  R24,Z+
-00004d 9195      	LPM  R25,Z+
-00004e 9700      	SBIW R24,0
-00004f f061      	BREQ __GLOBAL_INI_END
-000050 91a5      	LPM  R26,Z+
-000051 91b5      	LPM  R27,Z+
-000052 9005      	LPM  R0,Z+
-000053 9015      	LPM  R1,Z+
-000054 01bf      	MOVW R22,R30
-000055 01f0      	MOVW R30,R0
+000049 9185      	LPM  R24,Z+
+00004a 9195      	LPM  R25,Z+
+00004b 9700      	SBIW R24,0
+00004c f061      	BREQ __GLOBAL_INI_END
+00004d 91a5      	LPM  R26,Z+
+00004e 91b5      	LPM  R27,Z+
+00004f 9005      	LPM  R0,Z+
+000050 9015      	LPM  R1,Z+
+000051 01bf      	MOVW R22,R30
+000052 01f0      	MOVW R30,R0
                  __GLOBAL_INI_LOOP:
-000056 9005      	LPM  R0,Z+
-000057 920d      	ST   X+,R0
-000058 9701      	SBIW R24,1
-000059 f7e1      	BRNE __GLOBAL_INI_LOOP
-00005a 01fb      	MOVW R30,R22
-00005b cff0      	RJMP __GLOBAL_INI_NEXT
+000053 9005      	LPM  R0,Z+
+000054 920d      	ST   X+,R0
+000055 9701      	SBIW R24,1
+000056 f7e1      	BRNE __GLOBAL_INI_LOOP
+000057 01fb      	MOVW R30,R22
+000058 cff0      	RJMP __GLOBAL_INI_NEXT
                  __GLOBAL_INI_END:
                  
                  ;HARDWARE STACK POINTER INITIALIZATION
-00005c e5ef      	LDI  R30,LOW(__SRAM_END-__HEAP_SIZE)
-00005d bfed      	OUT  SPL,R30
-00005e e0e8      	LDI  R30,HIGH(__SRAM_END-__HEAP_SIZE)
-00005f bfee      	OUT  SPH,R30
+000059 e5ef      	LDI  R30,LOW(__SRAM_END-__HEAP_SIZE)
+00005a bfed      	OUT  SPL,R30
+00005b e0e8      	LDI  R30,HIGH(__SRAM_END-__HEAP_SIZE)
+00005c bfee      	OUT  SPH,R30
                  
                  ;DATA STACK POINTER INITIALIZATION
-000060 e6c0      	LDI  R28,LOW(__SRAM_START+__DSTACK_SIZE)
-000061 e0d2      	LDI  R29,HIGH(__SRAM_START+__DSTACK_SIZE)
+00005d e6c0      	LDI  R28,LOW(__SRAM_START+__DSTACK_SIZE)
+00005e e0d2      	LDI  R29,HIGH(__SRAM_START+__DSTACK_SIZE)
                  
-000062 940c 0064 	JMP  _main
+00005f 940c 0061 	JMP  _main
                  
                  	.ESEG
                  	.ORG 0
@@ -1241,7 +1238,7 @@ E:\microprocessor\first-cat\Q2\CodeQ2\Debug\List\codeQ2.asm(1089): warning: Regi
                  	#endif
                  ;#include <delay.h>
                  ;
-                 ;flash unsigned char digits[16] = {0xBF, 0x06, 0x5B, 0x4F, 0x66, 0xED, 0xFD, 0x07, 0xFF, 0xEF, 0xF7, 0xFC, 0xB9, 0x5C, 0x ...
+                 ;flash unsigned char digits[10] = {0xBF, 0x06, 0x5B, 0x4F, 0x66, 0xED, 0xFD, 0x07, 0xFF, 0xEF } ;
                  ;
                  ;int count = 0;
                  ;
@@ -1252,73 +1249,73 @@ E:\microprocessor\first-cat\Q2\CodeQ2\Debug\List\codeQ2.asm(1089): warning: Regi
                  _main:
                  ; .FSTART _main
                  ; 0000 0011 DDRA= 0xFF;
-000064 efef      	LDI  R30,LOW(255)
-000065 bbea      	OUT  0x1A,R30
+000061 efef      	LDI  R30,LOW(255)
+000062 bbea      	OUT  0x1A,R30
                  ; 0000 0012 DDRB= 0xFF;
-000066 bbe7      	OUT  0x17,R30
+000063 bbe7      	OUT  0x17,R30
                  ; 0000 0013 DDRD= 0xFF;
-000067 bbe1      	OUT  0x11,R30
+000064 bbe1      	OUT  0x11,R30
                  ; 0000 0014 
                  ; 0000 0015 while (1)
                  _0x3:
                  ; 0000 0016     {
                  ; 0000 0017       if(PIND.2 == 1){
-000068 9b82      	SBIS 0x10,2
-000069 c002      	RJMP _0x6
+000065 9b82      	SBIS 0x10,2
+000066 c002      	RJMP _0x6
                  ; 0000 0018         count = 0;
-00006a 2444      	CLR  R4
-00006b 2455      	CLR  R5
+000067 2444      	CLR  R4
+000068 2455      	CLR  R5
                  ; 0000 0019       }
                  ; 0000 001A 
                  ; 0000 001B       if(PIND.0==1){
                  _0x6:
-00006c 9b80      	SBIS 0x10,0
-00006d c024      	RJMP _0x7
+000069 9b80      	SBIS 0x10,0
+00006a c024      	RJMP _0x7
                  ; 0000 001C         if(count>=0 && count<=55){
-00006e 2400      	CLR  R0
-00006f 1440      	CP   R4,R0
-000070 0450      	CPC  R5,R0
-000071 f02c      	BRLT _0x9
-000072 e3e7      	LDI  R30,LOW(55)
-000073 e0f0      	LDI  R31,HIGH(55)
-000074 15e4      	CP   R30,R4
-000075 05f5      	CPC  R31,R5
-000076 f40c      	BRGE _0xA
+00006b 2400      	CLR  R0
+00006c 1440      	CP   R4,R0
+00006d 0450      	CPC  R5,R0
+00006e f02c      	BRLT _0x9
+00006f e3e7      	LDI  R30,LOW(55)
+000070 e0f0      	LDI  R31,HIGH(55)
+000071 15e4      	CP   R30,R4
+000072 05f5      	CPC  R31,R5
+000073 f40c      	BRGE _0xA
                  _0x9:
-000077 c01a      	RJMP _0x8
+000074 c01a      	RJMP _0x8
                  _0xA:
                  ; 0000 001D             PORTA = digits[count / 10];
-000078 01d2      	MOVW R26,R4
-000079 e0ea      	LDI  R30,LOW(10)
-00007a e0f0      	LDI  R31,HIGH(10)
-00007b 940e 00b9 	CALL __DIVW21
-00007d 5aec      	SUBI R30,LOW(-_digits*2)
-00007e 4fff      	SBCI R31,HIGH(-_digits*2)
-00007f 9004      	LPM  R0,Z
-000080 ba0b      	OUT  0x1B,R0
+000075 01d2      	MOVW R26,R4
+000076 e0ea      	LDI  R30,LOW(10)
+000077 e0f0      	LDI  R31,HIGH(10)
+000078 940e 00b6 	CALL __DIVW21
+00007a 5aec      	SUBI R30,LOW(-_digits*2)
+00007b 4fff      	SBCI R31,HIGH(-_digits*2)
+00007c 9004      	LPM  R0,Z
+00007d ba0b      	OUT  0x1B,R0
                  ; 0000 001E             PORTB = digits[count % 10];
-000081 01d2      	MOVW R26,R4
-000082 e0ea      	LDI  R30,LOW(10)
-000083 e0f0      	LDI  R31,HIGH(10)
-000084 940e 00be 	CALL __MODW21
-000086 5aec      	SUBI R30,LOW(-_digits*2)
-000087 4fff      	SBCI R31,HIGH(-_digits*2)
-000088 9004      	LPM  R0,Z
-000089 ba08      	OUT  0x18,R0
+00007e 01d2      	MOVW R26,R4
+00007f e0ea      	LDI  R30,LOW(10)
+000080 e0f0      	LDI  R31,HIGH(10)
+000081 940e 00bb 	CALL __MODW21
+000083 5aec      	SUBI R30,LOW(-_digits*2)
+000084 4fff      	SBCI R31,HIGH(-_digits*2)
+000085 9004      	LPM  R0,Z
+000086 ba08      	OUT  0x18,R0
                  ; 0000 001F             if(PIND.1 == 0){
-00008a 9981      	SBIC 0x10,1
-00008b c003      	RJMP _0xB
+000087 9981      	SBIC 0x10,1
+000088 c003      	RJMP _0xB
                  ; 0000 0020                 count++;
-00008c 01f2      	MOVW R30,R4
-00008d 9631      	ADIW R30,1
-00008e c002      	RJMP _0xE
+000089 01f2      	MOVW R30,R4
+00008a 9631      	ADIW R30,1
+00008b c002      	RJMP _0xE
                  ; 0000 0021             } else {
                  _0xB:
                  ; 0000 0022                 count--;
-00008f 01f2      	MOVW R30,R4
-000090 9731      	SBIW R30,1
+00008c 01f2      	MOVW R30,R4
+00008d 9731      	SBIW R30,1
                  _0xE:
-000091 012f      	MOVW R4,R30
+00008e 012f      	MOVW R4,R30
                  ; 0000 0023             }
                  ; 0000 0024 
                  ; 0000 0025         }
@@ -1328,109 +1325,109 @@ E:\microprocessor\first-cat\Q2\CodeQ2\Debug\List\codeQ2.asm(1089): warning: Regi
                  ; 0000 0028 
                  ; 0000 0029        delay_ms(1000);
                  _0x7:
-000092 eea8      	LDI  R26,LOW(1000)
-000093 e0b3      	LDI  R27,HIGH(1000)
-000094 940e 0098 	CALL _delay_ms
+00008f eea8      	LDI  R26,LOW(1000)
+000090 e0b3      	LDI  R27,HIGH(1000)
+000091 940e 0095 	CALL _delay_ms
                  ; 0000 002A     }
-000096 cfd1      	RJMP _0x3
+000093 cfd1      	RJMP _0x3
                  ; 0000 002B }
                  _0xD:
-000097 cfff      	RJMP _0xD
+000094 cfff      	RJMP _0xD
                  ; .FEND
                  
                  	.CSEG
                  
                  	.CSEG
                  _delay_ms:
-000098 9610      	adiw r26,0
-000099 f039      	breq __delay_ms1
+000095 9610      	adiw r26,0
+000096 f039      	breq __delay_ms1
                  __delay_ms0:
-00009a 95a8      	wdr
+000097 95a8      	wdr
                 +
-00009b ed80     +LDI R24 , LOW ( 0x7D0 )
-00009c e097     +LDI R25 , HIGH ( 0x7D0 )
+000098 ed80     +LDI R24 , LOW ( 0x7D0 )
+000099 e097     +LDI R25 , HIGH ( 0x7D0 )
                 +__DELAY_USW_LOOP :
-00009d 9701     +SBIW R24 , 1
-00009e f7f1     +BRNE __DELAY_USW_LOOP
+00009a 9701     +SBIW R24 , 1
+00009b f7f1     +BRNE __DELAY_USW_LOOP
                  	__DELAY_USW 0x7D0
-00009f 9711      	sbiw r26,1
-0000a0 f7c9      	brne __delay_ms0
+00009c 9711      	sbiw r26,1
+00009d f7c9      	brne __delay_ms0
                  __delay_ms1:
-0000a1 9508      	ret
+00009e 9508      	ret
                  
                  __ANEGW1:
-0000a2 95f1      	NEG  R31
-0000a3 95e1      	NEG  R30
-0000a4 40f0      	SBCI R31,0
-0000a5 9508      	RET
+00009f 95f1      	NEG  R31
+0000a0 95e1      	NEG  R30
+0000a1 40f0      	SBCI R31,0
+0000a2 9508      	RET
                  
                  __DIVW21U:
-0000a6 2400      	CLR  R0
-0000a7 2411      	CLR  R1
-0000a8 e190      	LDI  R25,16
+0000a3 2400      	CLR  R0
+0000a4 2411      	CLR  R1
+0000a5 e190      	LDI  R25,16
                  __DIVW21U1:
-0000a9 0faa      	LSL  R26
-0000aa 1fbb      	ROL  R27
-0000ab 1c00      	ROL  R0
-0000ac 1c11      	ROL  R1
-0000ad 1a0e      	SUB  R0,R30
-0000ae 0a1f      	SBC  R1,R31
-0000af f418      	BRCC __DIVW21U2
-0000b0 0e0e      	ADD  R0,R30
-0000b1 1e1f      	ADC  R1,R31
-0000b2 c001      	RJMP __DIVW21U3
+0000a6 0faa      	LSL  R26
+0000a7 1fbb      	ROL  R27
+0000a8 1c00      	ROL  R0
+0000a9 1c11      	ROL  R1
+0000aa 1a0e      	SUB  R0,R30
+0000ab 0a1f      	SBC  R1,R31
+0000ac f418      	BRCC __DIVW21U2
+0000ad 0e0e      	ADD  R0,R30
+0000ae 1e1f      	ADC  R1,R31
+0000af c001      	RJMP __DIVW21U3
                  __DIVW21U2:
-0000b3 60a1      	SBR  R26,1
+0000b0 60a1      	SBR  R26,1
                  __DIVW21U3:
-0000b4 959a      	DEC  R25
-0000b5 f799      	BRNE __DIVW21U1
-0000b6 01fd      	MOVW R30,R26
-0000b7 01d0      	MOVW R26,R0
-0000b8 9508      	RET
+0000b1 959a      	DEC  R25
+0000b2 f799      	BRNE __DIVW21U1
+0000b3 01fd      	MOVW R30,R26
+0000b4 01d0      	MOVW R26,R0
+0000b5 9508      	RET
                  
                  __DIVW21:
-0000b9 d012      	RCALL __CHKSIGNW
-0000ba dfeb      	RCALL __DIVW21U
-0000bb f40e      	BRTC __DIVW211
-0000bc dfe5      	RCALL __ANEGW1
+0000b6 d012      	RCALL __CHKSIGNW
+0000b7 dfeb      	RCALL __DIVW21U
+0000b8 f40e      	BRTC __DIVW211
+0000b9 dfe5      	RCALL __ANEGW1
                  __DIVW211:
-0000bd 9508      	RET
+0000ba 9508      	RET
                  
                  __MODW21:
-0000be 94e8      	CLT
-0000bf ffb7      	SBRS R27,7
-0000c0 c004      	RJMP __MODW211
-0000c1 95a0      	COM  R26
-0000c2 95b0      	COM  R27
-0000c3 9611      	ADIW R26,1
-0000c4 9468      	SET
+0000bb 94e8      	CLT
+0000bc ffb7      	SBRS R27,7
+0000bd c004      	RJMP __MODW211
+0000be 95a0      	COM  R26
+0000bf 95b0      	COM  R27
+0000c0 9611      	ADIW R26,1
+0000c1 9468      	SET
                  __MODW211:
-0000c5 fdf7      	SBRC R31,7
-0000c6 dfdb      	RCALL __ANEGW1
-0000c7 dfde      	RCALL __DIVW21U
-0000c8 01fd      	MOVW R30,R26
-0000c9 f40e      	BRTC __MODW212
-0000ca dfd7      	RCALL __ANEGW1
+0000c2 fdf7      	SBRC R31,7
+0000c3 dfdb      	RCALL __ANEGW1
+0000c4 dfde      	RCALL __DIVW21U
+0000c5 01fd      	MOVW R30,R26
+0000c6 f40e      	BRTC __MODW212
+0000c7 dfd7      	RCALL __ANEGW1
                  __MODW212:
-0000cb 9508      	RET
+0000c8 9508      	RET
                  
                  __CHKSIGNW:
-0000cc 94e8      	CLT
-0000cd fff7      	SBRS R31,7
-0000ce c002      	RJMP __CHKSW1
-0000cf dfd2      	RCALL __ANEGW1
-0000d0 9468      	SET
+0000c9 94e8      	CLT
+0000ca fff7      	SBRS R31,7
+0000cb c002      	RJMP __CHKSW1
+0000cc dfd2      	RCALL __ANEGW1
+0000cd 9468      	SET
                  __CHKSW1:
-0000d1 ffb7      	SBRS R27,7
-0000d2 c006      	RJMP __CHKSW2
-0000d3 95a0      	COM  R26
-0000d4 95b0      	COM  R27
-0000d5 9611      	ADIW R26,1
-0000d6 f800      	BLD  R0,0
-0000d7 9403      	INC  R0
-0000d8 fa00      	BST  R0,0
+0000ce ffb7      	SBRS R27,7
+0000cf c006      	RJMP __CHKSW2
+0000d0 95a0      	COM  R26
+0000d1 95b0      	COM  R27
+0000d2 9611      	ADIW R26,1
+0000d3 f800      	BLD  R0,0
+0000d4 9403      	INC  R0
+0000d5 fa00      	BST  R0,0
                  __CHKSW2:
-0000d9 9508      	RET
+0000d6 9508      	RET
                  
                  ;END OF CODE MARKER
                  __END_OF_CODE:
@@ -1484,7 +1481,7 @@ Instructions used: 44 out of 116 (37.9%)
 ATmega32 memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0001b4    410     26    436   32768   1.3%
+[.cseg] 0x000000 0x0001ae    410     20    430   32768   1.3%
 [.dseg] 0x000060 0x000260      0      0      0    2048   0.0%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 
