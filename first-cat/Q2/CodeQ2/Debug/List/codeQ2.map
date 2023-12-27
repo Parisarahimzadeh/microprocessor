@@ -9,9 +9,9 @@ Variable                                                                        
 Register Allocation
 Variable                                                                          Register  Size
 ------------------------------------------------------------------------------------------------
-counter                                                                           R4,R5        2
+count                                                                             R4,R5        2
 
 FLASH Allocation [words]
 Function                                                                          Address   Size
 ------------------------------------------------------------------------------------------------
-main                                                                              0x00064     62
+main                                                                              0x00064     52

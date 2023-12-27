@@ -10,29 +10,28 @@
 
 flash unsigned char digits[16] = {0xBF, 0x06, 0x5B, 0x4F, 0x66, 0xED, 0xFD, 0x07, 0xFF, 0xEF, 0xF7, 0xFC, 0xB9, 0x5C, 0xF9 ,0xF1 } ;
 
-int counter = 0;
+int count = 0;
 
 void main(void)
 {
-
-DDRB= 0xFF;
 DDRA= 0xFF;
-DDRD= 0x00;
+DDRB= 0xFF;
+DDRD= 0xFF;
 
 while (1)
     {
       if(PIND.2 == 1){
-        counter = 0;
+        count = 0;
       }
         
       if(PIND.0==1){
-        if(counter>= 0 && counter <= 55){
-            PORTA = digits[counter / 10];
-            PORTB = digits[counter % 10];
+        if(count>=0 && count<=55){
+            PORTA = digits[count / 10];
+            PORTB = digits[count % 10];
             if(PIND.1 == 0){
-                counter++;
-            } else if(PIND.1 == 1 && counter != 0){
-                counter--; 
+                count++;
+            } else {
+                count--; 
             }
             
         }

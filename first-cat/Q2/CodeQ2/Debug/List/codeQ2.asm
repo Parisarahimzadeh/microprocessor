@@ -1085,8 +1085,8 @@ __DELAY_USW_LOOP:
 	.ENDM
 
 ;NAME DEFINITIONS FOR GLOBAL VARIABLES ALLOCATED TO REGISTERS
-	.DEF _counter=R4
-	.DEF _counter_msb=R5
+	.DEF _count=R4
+	.DEF _count_msb=R5
 
 	.CSEG
 	.ORG 0x00
@@ -1231,7 +1231,7 @@ __GLOBAL_INI_END:
 ;
 ;flash unsigned char digits[16] = {0xBF, 0x06, 0x5B, 0x4F, 0x66, 0xED, 0xFD, 0x07, 0xFF, 0xEF, 0xF7, 0xFC, 0xB9, 0x5C, 0x ...
 ;
-;int counter = 0;
+;int count = 0;
 ;
 ;void main(void)
 ; 0000 0010 {
@@ -1239,32 +1239,30 @@ __GLOBAL_INI_END:
 	.CSEG
 _main:
 ; .FSTART _main
-; 0000 0011 
-; 0000 0012 DDRB= 0xFF;
+; 0000 0011 DDRA= 0xFF;
 	LDI  R30,LOW(255)
-	OUT  0x17,R30
-; 0000 0013 DDRA= 0xFF;
 	OUT  0x1A,R30
-; 0000 0014 DDRD= 0x00;
-	LDI  R30,LOW(0)
+; 0000 0012 DDRB= 0xFF;
+	OUT  0x17,R30
+; 0000 0013 DDRD= 0xFF;
 	OUT  0x11,R30
-; 0000 0015 
-; 0000 0016 while (1)
+; 0000 0014 
+; 0000 0015 while (1)
 _0x3:
-; 0000 0017     {
-; 0000 0018       if(PIND.2 == 1){
+; 0000 0016     {
+; 0000 0017       if(PIND.2 == 1){
 	SBIS 0x10,2
 	RJMP _0x6
-; 0000 0019         counter = 0;
+; 0000 0018         count = 0;
 	CLR  R4
 	CLR  R5
-; 0000 001A       }
-; 0000 001B 
-; 0000 001C       if(PIND.0==1){
+; 0000 0019       }
+; 0000 001A 
+; 0000 001B       if(PIND.0==1){
 _0x6:
 	SBIS 0x10,0
 	RJMP _0x7
-; 0000 001D         if(counter>= 0 && counter <= 55){
+; 0000 001C         if(count>=0 && count<=55){
 	CLR  R0
 	CP   R4,R0
 	CPC  R5,R0
@@ -1277,7 +1275,7 @@ _0x6:
 _0x9:
 	RJMP _0x8
 _0xA:
-; 0000 001E             PORTA = digits[counter / 10];
+; 0000 001D             PORTA = digits[count / 10];
 	MOVW R26,R4
 	LDI  R30,LOW(10)
 	LDI  R31,HIGH(10)
@@ -1286,7 +1284,7 @@ _0xA:
 	SBCI R31,HIGH(-_digits*2)
 	LPM  R0,Z
 	OUT  0x1B,R0
-; 0000 001F             PORTB = digits[counter % 10];
+; 0000 001E             PORTB = digits[count % 10];
 	MOVW R26,R4
 	LDI  R30,LOW(10)
 	LDI  R31,HIGH(10)
@@ -1295,49 +1293,37 @@ _0xA:
 	SBCI R31,HIGH(-_digits*2)
 	LPM  R0,Z
 	OUT  0x18,R0
-; 0000 0020             if(PIND.1 == 0){
+; 0000 001F             if(PIND.1 == 0){
 	SBIC 0x10,1
 	RJMP _0xB
-; 0000 0021                 counter++;
+; 0000 0020                 count++;
 	MOVW R30,R4
 	ADIW R30,1
-	MOVW R4,R30
-; 0000 0022             } else if(PIND.1 == 1 && counter != 0){
-	RJMP _0xC
-_0xB:
-	SBIS 0x10,1
 	RJMP _0xE
-	CLR  R0
-	CP   R0,R4
-	CPC  R0,R5
-	BRNE _0xF
-_0xE:
-	RJMP _0xD
-_0xF:
-; 0000 0023                 counter--;
+; 0000 0021             } else {
+_0xB:
+; 0000 0022                 count--;
 	MOVW R30,R4
 	SBIW R30,1
+_0xE:
 	MOVW R4,R30
-	ADIW R30,1
-; 0000 0024             }
-; 0000 0025 
-; 0000 0026         }
-_0xD:
-_0xC:
-; 0000 0027       }
+; 0000 0023             }
+; 0000 0024 
+; 0000 0025         }
+; 0000 0026       }
 _0x8:
+; 0000 0027 
 ; 0000 0028 
-; 0000 0029 
-; 0000 002A        delay_ms(1000);
+; 0000 0029        delay_ms(1000);
 _0x7:
 	LDI  R26,LOW(1000)
 	LDI  R27,HIGH(1000)
 	CALL _delay_ms
-; 0000 002B     }
+; 0000 002A     }
 	RJMP _0x3
-; 0000 002C }
-_0x10:
-	RJMP _0x10
+; 0000 002B }
+_0xD:
+	RJMP _0xD
 ; .FEND
 
 	.CSEG
