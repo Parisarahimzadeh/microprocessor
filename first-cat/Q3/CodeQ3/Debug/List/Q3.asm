@@ -1257,7 +1257,7 @@ _main:
 ; 0000 0018 while (1)
 _0x3:
 ; 0000 0019     {
-; 0000 001A      gam = (PINC.0 * 1) + (PINC.1 * 2) + (PINC.2 * 4) + (PINC.3 * 8) + (PINC.4 * 16) + (PINC.5 * 32) + (PINC.6 * 64) + ( ...
+; 0000 001A      gam = (PINC.0 * 1) + (PINC.1 * 2) + (PINC.2 * 4) + (PINC.3 * 8) + (PINC.4 * 16) + (PINC.5 * 32) ;
 	LDI  R26,0
 	SBIC 0x13,0
 	LDI  R26,1
@@ -1296,20 +1296,6 @@ _0x3:
 	SBIC 0x13,5
 	LDI  R26,1
 	LDI  R30,LOW(32)
-	MUL  R30,R26
-	MOVW R30,R0
-	ADD  R22,R30
-	LDI  R26,0
-	SBIC 0x13,6
-	LDI  R26,1
-	LDI  R30,LOW(64)
-	MUL  R30,R26
-	MOVW R30,R0
-	ADD  R22,R30
-	LDI  R26,0
-	SBIC 0x13,7
-	LDI  R26,1
-	LDI  R30,LOW(128)
 	MUL  R30,R26
 	MOVW R30,R0
 	ADD  R30,R22

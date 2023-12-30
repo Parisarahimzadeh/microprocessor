@@ -23,7 +23,7 @@ DDRD= 0x00;
 
 while (1)
     {
-     gam = (PINC.0 * 1) + (PINC.1 * 2) + (PINC.2 * 4) + (PINC.3 * 8) + (PINC.4 * 16) + (PINC.5 * 32) + (PINC.6 * 64) + (PINC.7 * 128);
+     gam = (PINC.0 * 1) + (PINC.1 * 2) + (PINC.2 * 4) + (PINC.3 * 8) + (PINC.4 * 16) + (PINC.5 * 32) ;
      
       if(PIND.2 == 1){
         count = 0;
