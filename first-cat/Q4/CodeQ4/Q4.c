@@ -1,0 +1,27 @@
+/*
+ * Q4.c
+ *
+ * Created: 12/30/2023 11:38:03 PM
+ * Author: Parisa
+ */
+
+#include <mega32.h>
+#include <delay.h>
+
+flash unsigned char patterns[8] = {0x00, 0x02, 0x02, 0x01, 0x02, 0x01, 0x01, 0x03 };
+int input = 0;
+void main(void)
+{
+
+DDRA= 0x00;
+DDRB= 0xFF;
+
+while (1)
+    {
+        input = (PINA.0 * 1) + (PINA.1 * 2) + (PINA.2 * 4);
+        PORTB = patterns[input];
+        
+        delay_ms(10);
+
+    }
+}
