@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="663dd5c8-3c4b-4288-8f13-a4e3ad2e6dbe" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/Exe/projectt1.hex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/Exe/projectt1.hex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/Exe/projectt1.rom" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/Exe/projectt1.rom" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/Link/projectt1.a" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/Link/projectt1.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/Link/projectt1.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/Link/projectt1.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/List/projectt1.asm" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/List/projectt1.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/List/projectt1.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/List/projectt1.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/List/projectt1.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/List/projectt1.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/projectt1.cof" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/projectt1.cof" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/projectt1.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/projectt1.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/projectt1.sym1" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/projectt1.sym1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/projectt1.sym2" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/projectt1.sym2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/projectt1.sym3" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/Debug/projectt1.sym3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/projectt1.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/projectt1.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/projectt1.cci" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/projectt1.cci" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/projectt1.cof" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/projectt1.cof" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/projectt1.prj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q1/CodeQ1/projectt1.prj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/ProteusQ1/New Project.pdsprj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/ProteusQ1/New Project.pdsprj.DESKTOP-SFK2IT3.Parisa.workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q1/ProteusQ1/New Project.pdsprj.DESKTOP-SFK2IT3.Parisa.workspace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q1/ProteusQ1/Project Backups/New Project [Autosaved].pdsprj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q1/ProteusQ1/Project Backups/New Project [Autosaved].pdsprj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q2/CodeQ2/codeQ2.prj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q2/CodeQ2/codeQ2.prj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q2/ProteusQ2/Q2.pdsprj.DESKTOP-SFK2IT3.Parisa.workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q2/ProteusQ2/Q2.pdsprj.DESKTOP-SFK2IT3.Parisa.workspace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q3/ProteusQ3/New Project.pdsprj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q3/ProteusQ3/New Project.pdsprj.DESKTOP-SFK2IT3.Parisa.workspace" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q4/CodeQ4/Q4.prj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q4/CodeQ4/Q4.prj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q4/ProteusQ4/New Project.pdsprj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../first-cat/Q4/ProteusQ4/New Project.pdsprj.DESKTOP-SFK2IT3.Parisa.workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../../first-cat/Q4/ProteusQ4/New Project.pdsprj.DESKTOP-SFK2IT3.Parisa.workspace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/Exe/trafficLight.hex" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/Exe/trafficLight.hex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/Exe/trafficLight.rom" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/Exe/trafficLight.rom" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/Link/trafficLight.a" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/Link/trafficLight.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/Link/trafficLight.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/Link/trafficLight.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/List/trafficLight.asm" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/List/trafficLight.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/List/trafficLight.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/List/trafficLight.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/List/trafficLight.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/List/trafficLight.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/trafficLight.cof" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/trafficLight.cof" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/trafficLight.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/trafficLight.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/trafficLight.sym1" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/trafficLight.sym1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/trafficLight.sym2" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/trafficLight.sym2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/trafficLight.sym3" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/Debug/trafficLight.sym3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/trafficLight.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/trafficLight.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/trafficLight.cci" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/trafficLight.cci" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/trafficLight.cof" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/trafficLight.cof" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/trafficLight.prj" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q1/CodeTrafficLight/trafficLight.prj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q1/ProteusTrafficLight/trafficLight.pdsprj.DESKTOP-SFK2IT3.Parisa.workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q1/ProteusTrafficLight/trafficLight.pdsprj.DESKTOP-SFK2IT3.Parisa.workspace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q2/ProteusTrafficLight2/TrafficLight2.pdsprj" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q2/ProteusTrafficLight2/TrafficLight2.pdsprj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TrafficLight-q2/ProteusTrafficLight2/TrafficLight2.pdsprj.DESKTOP-SFK2IT3.Parisa.workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../../TrafficLight-q2/ProteusTrafficLight2/TrafficLight2.pdsprj.DESKTOP-SFK2IT3.Parisa.workspace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Proteus/Project Backups/Q3 [Autosaved].pdsprj" beforeDir="false" afterPath="$PROJECT_DIR$/../Proteus/Project Backups/Q3 [Autosaved].pdsprj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Proteus/Q3.pdsprj" beforeDir="false" afterPath="$PROJECT_DIR$/../Proteus/Q3.pdsprj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Proteus/Q3.pdsprj.DESKTOP-SFK2IT3.Parisa.workspace" beforeDir="false" afterPath="$PROJECT_DIR$/../Proteus/Q3.pdsprj.DESKTOP-SFK2IT3.Parisa.workspace" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2023" />
+    <option name="minorVersion" value="2.1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2bJizZ90T2d5rty206vBFbbUhVF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="663dd5c8-3c4b-4288-8f13-a4e3ad2e6dbe" name="Changes" comment="" />
+      <created>1705939847324</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1705939847324</updated>
+      <workItem from="1705939848509" duration="19000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -76,8 +76,8 @@
 ; 0000 0027         unsigned char input = PINA;
 ; 0000 0028 
 ; 0000 0029 
-; 0000 002A         unsigned char digit1 = sevenSegmentMap[input >> 4];
-; 0000 002B         unsigned char digit2 = sevenSegmentMap[input & 0x0F];
+; 0000 002A         unsigned char digit1 = sevenSegmentMap[input / 16];
+; 0000 002B         unsigned char digit2 = sevenSegmentMap[input % 16];
 ; 0000 002C 
 ; 0000 002D 
 ; 0000 002E         PORTB = digit1;
@@ -101,21 +101,23 @@
 ;PCODE: $00000023 VOL: 0
 ;PCODE: $00000024 VOL: 0
 ;PCODE: $00000025 VOL: 0
+;PCODE: $00000026 VOL: 0
+;PCODE: $00000027 VOL: 0
 ; 0000 002F 
 ; 0000 0030 
 ; 0000 0031         PORTC = digit2;
-;PCODE: $00000026 VOL: 0
-;PCODE: $00000027 VOL: 0
-; 0000 0032 
-; 0000 0033         delay_ms(100);
 ;PCODE: $00000028 VOL: 0
 ;PCODE: $00000029 VOL: 0
+; 0000 0032 
+; 0000 0033         delay_ms(100);
 ;PCODE: $0000002A VOL: 0
-; 0000 0034     }
 ;PCODE: $0000002B VOL: 0
 ;PCODE: $0000002C VOL: 0
+; 0000 0034     }
 ;PCODE: $0000002D VOL: 0
-; 0000 0035 }
 ;PCODE: $0000002E VOL: 0
 ;PCODE: $0000002F VOL: 0
+; 0000 0035 }
 ;PCODE: $00000030 VOL: 0
+;PCODE: $00000031 VOL: 0
+;PCODE: $00000032 VOL: 0

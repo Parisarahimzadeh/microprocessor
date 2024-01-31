@@ -20,7 +20,7 @@ while (1)
         PORTA.3 = 1;
         PORTA.4 = 0;
         PORTA.5 = 0;
-        delay_ms(1000);
+        delay_ms(60000);
         
         PORTA.0 = 0;
         PORTA.1 = 1;
@@ -28,7 +28,7 @@ while (1)
         PORTA.3 = 1;
         PORTA.4 = 0;
         PORTA.5 = 0;
-        delay_ms(1000);
+        delay_ms(10000);
         
         PORTA.0 = 1;
         PORTA.1 = 0;
@@ -36,7 +36,7 @@ while (1)
         PORTA.3 = 1;
         PORTA.4 = 0;
         PORTA.5 = 0;
-        delay_ms(1000); 
+        delay_ms(2000); 
         
         PORTA.0 = 1;
         PORTA.1 = 0;
@@ -44,7 +44,7 @@ while (1)
         PORTA.3 = 0;
         PORTA.4 = 0;
         PORTA.5 = 1;
-        delay_ms(1000);
+        delay_ms(60000);
         
         PORTA.0 = 1;
         PORTA.1 = 0;
@@ -52,7 +52,7 @@ while (1)
         PORTA.3 = 0;
         PORTA.4 = 1;
         PORTA.5 = 0;
-        delay_ms(1000); 
+        delay_ms(10000); 
         
         PORTA.0 = 1;
         PORTA.1 = 0;
@@ -60,7 +60,7 @@ while (1)
         PORTA.3 = 0;
         PORTA.4 = 0;
         PORTA.5 = 1;
-        delay_ms(1000);
+        delay_ms(2000);
 
     }
 }

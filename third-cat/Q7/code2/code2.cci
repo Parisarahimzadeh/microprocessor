@@ -1,0 +1,7 @@
+VERSION:3 SOURCE_TIMESTAMP:5836A914
+NODE:I LEVEL:0 LINE:9 "F:\programs\codevison\setupOfit\inc\mega32.h"
+NODE:I LEVEL:0 LINE:10 "F:\programs\codevison\setupOfit\inc\delay.h"
+NODE:I LEVEL:0 LINE:11 "F:\programs\codevison\setupOfit\inc\stdio.h"
+NODE:V LEVEL:0 LINE:14 "test -> R5"
+NODE:F LEVEL:0 LINE:17 "main(void)"
+NODE:F LEVEL:0 LINE:43 "usart_rx_isr(void)"

@@ -1203,10 +1203,15 @@ _0x3:
 ; 0000 0013         PORTA.2 = 1;
 	SBI  0x1B,2
 ; 0000 0014         PORTA.3 = 1;
-	RCALL SUBOPT_0x0
+	SBI  0x1B,3
 ; 0000 0015         PORTA.4 = 0;
+	CBI  0x1B,4
 ; 0000 0016         PORTA.5 = 0;
-; 0000 0017         delay_ms(1000);
+	CBI  0x1B,5
+; 0000 0017         delay_ms(60000);
+	LDI  R26,LOW(60000)
+	LDI  R27,HIGH(60000)
+	CALL _delay_ms
 ; 0000 0018 
 ; 0000 0019         PORTA.0 = 0;
 	CBI  0x1B,0
@@ -1215,56 +1220,63 @@ _0x3:
 ; 0000 001B         PORTA.2 = 0;
 	CBI  0x1B,2
 ; 0000 001C         PORTA.3 = 1;
-	RCALL SUBOPT_0x0
+	SBI  0x1B,3
 ; 0000 001D         PORTA.4 = 0;
+	CBI  0x1B,4
 ; 0000 001E         PORTA.5 = 0;
-; 0000 001F         delay_ms(1000);
+	RCALL SUBOPT_0x0
+; 0000 001F         delay_ms(10000);
 ; 0000 0020 
 ; 0000 0021         PORTA.0 = 1;
-	SBI  0x1B,0
 ; 0000 0022         PORTA.1 = 0;
-	CBI  0x1B,1
 ; 0000 0023         PORTA.2 = 0;
-	CBI  0x1B,2
 ; 0000 0024         PORTA.3 = 1;
-	RCALL SUBOPT_0x0
+	SBI  0x1B,3
 ; 0000 0025         PORTA.4 = 0;
+	CBI  0x1B,4
 ; 0000 0026         PORTA.5 = 0;
-; 0000 0027         delay_ms(1000);
+	CBI  0x1B,5
+; 0000 0027         delay_ms(2000);
+	LDI  R26,LOW(2000)
+	LDI  R27,HIGH(2000)
+	RCALL SUBOPT_0x1
 ; 0000 0028 
 ; 0000 0029         PORTA.0 = 1;
-	RCALL SUBOPT_0x1
 ; 0000 002A         PORTA.1 = 0;
 ; 0000 002B         PORTA.2 = 0;
 ; 0000 002C         PORTA.3 = 0;
 ; 0000 002D         PORTA.4 = 0;
-	RCALL SUBOPT_0x2
+	CBI  0x1B,4
 ; 0000 002E         PORTA.5 = 1;
-; 0000 002F         delay_ms(1000);
+	SBI  0x1B,5
+; 0000 002F         delay_ms(60000);
+	LDI  R26,LOW(60000)
+	LDI  R27,HIGH(60000)
+	RCALL SUBOPT_0x1
 ; 0000 0030 
 ; 0000 0031         PORTA.0 = 1;
-	RCALL SUBOPT_0x1
 ; 0000 0032         PORTA.1 = 0;
 ; 0000 0033         PORTA.2 = 0;
 ; 0000 0034         PORTA.3 = 0;
 ; 0000 0035         PORTA.4 = 1;
 	SBI  0x1B,4
 ; 0000 0036         PORTA.5 = 0;
-	CBI  0x1B,5
-; 0000 0037         delay_ms(1000);
-	LDI  R26,LOW(1000)
-	LDI  R27,HIGH(1000)
-	CALL _delay_ms
+	RCALL SUBOPT_0x0
+; 0000 0037         delay_ms(10000);
 ; 0000 0038 
 ; 0000 0039         PORTA.0 = 1;
-	RCALL SUBOPT_0x1
 ; 0000 003A         PORTA.1 = 0;
 ; 0000 003B         PORTA.2 = 0;
 ; 0000 003C         PORTA.3 = 0;
+	CBI  0x1B,3
 ; 0000 003D         PORTA.4 = 0;
-	RCALL SUBOPT_0x2
+	CBI  0x1B,4
 ; 0000 003E         PORTA.5 = 1;
-; 0000 003F         delay_ms(1000);
+	SBI  0x1B,5
+; 0000 003F         delay_ms(2000);
+	LDI  R26,LOW(2000)
+	LDI  R27,HIGH(2000)
+	CALL _delay_ms
 ; 0000 0040 
 ; 0000 0041     }
 	RJMP _0x3
@@ -1274,30 +1286,25 @@ _0x4E:
 ; .FEND
 
 	.CSEG
-;OPTIMIZER ADDED SUBROUTINE, CALLED 3 TIMES, CODE SIZE REDUCTION:7 WORDS
+;OPTIMIZER ADDED SUBROUTINE, CALLED 2 TIMES, CODE SIZE REDUCTION:3 WORDS
 SUBOPT_0x0:
-	SBI  0x1B,3
-	CBI  0x1B,4
 	CBI  0x1B,5
-	LDI  R26,LOW(1000)
-	LDI  R27,HIGH(1000)
-	JMP  _delay_ms
+	LDI  R26,LOW(10000)
+	LDI  R27,HIGH(10000)
+	CALL _delay_ms
+	SBI  0x1B,0
+	CBI  0x1B,1
+	CBI  0x1B,2
+	RET
 
-;OPTIMIZER ADDED SUBROUTINE, CALLED 3 TIMES, CODE SIZE REDUCTION:1 WORDS
+;OPTIMIZER ADDED SUBROUTINE, CALLED 2 TIMES, CODE SIZE REDUCTION:1 WORDS
 SUBOPT_0x1:
+	CALL _delay_ms
 	SBI  0x1B,0
 	CBI  0x1B,1
 	CBI  0x1B,2
 	CBI  0x1B,3
 	RET
-
-;OPTIMIZER ADDED SUBROUTINE, CALLED 2 TIMES, CODE SIZE REDUCTION:1 WORDS
-SUBOPT_0x2:
-	CBI  0x1B,4
-	SBI  0x1B,5
-	LDI  R26,LOW(1000)
-	LDI  R27,HIGH(1000)
-	JMP  _delay_ms
 
 
 	.CSEG

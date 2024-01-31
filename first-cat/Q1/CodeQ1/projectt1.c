@@ -39,8 +39,8 @@ void main(void) {
         unsigned char input = PINA;
 
         
-        unsigned char digit1 = sevenSegmentMap[input >> 4]; 
-        unsigned char digit2 = sevenSegmentMap[input & 0x0F]; 
+        unsigned char digit1 = sevenSegmentMap[input / 16]; 
+        unsigned char digit2 = sevenSegmentMap[input % 16]; 
 
         
         PORTB = digit1;

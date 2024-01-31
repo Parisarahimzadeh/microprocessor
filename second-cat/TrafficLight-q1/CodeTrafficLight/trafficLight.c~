@@ -10,9 +10,8 @@
 
 
 void main(void)
-    
 {
-DDRA = 0xFF;
+DDRA = 0xFF; 
 while (1)
     {
         PORTA.0 = 0;
@@ -21,7 +20,7 @@ while (1)
         PORTA.3 = 1;
         PORTA.4 = 0;
         PORTA.5 = 0;
-        delay-ms(1000);
+        delay_ms(1000);
         
         PORTA.0 = 0;
         PORTA.1 = 1;
@@ -29,7 +28,7 @@ while (1)
         PORTA.3 = 1;
         PORTA.4 = 0;
         PORTA.5 = 0;
-        delay-ms(1000); 
+        delay_ms(1000);
         
         PORTA.0 = 1;
         PORTA.1 = 0;
@@ -37,7 +36,7 @@ while (1)
         PORTA.3 = 1;
         PORTA.4 = 0;
         PORTA.5 = 0;
-        delay-ms(1000); 
+        delay_ms(1000); 
         
         PORTA.0 = 1;
         PORTA.1 = 0;
@@ -45,7 +44,7 @@ while (1)
         PORTA.3 = 0;
         PORTA.4 = 0;
         PORTA.5 = 1;
-        delay-ms(1000);
+        delay_ms(1000);
         
         PORTA.0 = 1;
         PORTA.1 = 0;
@@ -53,7 +52,7 @@ while (1)
         PORTA.3 = 0;
         PORTA.4 = 1;
         PORTA.5 = 0;
-        delay-ms(1000); 
+        delay_ms(1000); 
         
         PORTA.0 = 1;
         PORTA.1 = 0;
@@ -61,7 +60,7 @@ while (1)
         PORTA.3 = 0;
         PORTA.4 = 0;
         PORTA.5 = 1;
-        delay-ms(1000);
+        delay_ms(1000);
 
     }
 }

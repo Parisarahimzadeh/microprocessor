@@ -1,0 +1,8 @@
+VERSION:3 SOURCE_TIMESTAMP:5836A477
+NODE:I LEVEL:0 LINE:8 "F:\programs\codevison\setupOfit\inc\mega32.h"
+NODE:I LEVEL:0 LINE:9 "F:\programs\codevison\setupOfit\inc\delay.h"
+NODE:C LEVEL:0 LINE:11 "pat -> FLASH"
+NODE:V LEVEL:0 LINE:24 "delayTime -> R4,R5"
+NODE:V LEVEL:0 LINE:25 "row -> R6,R7"
+NODE:V LEVEL:0 LINE:26 "col -> R8,R9"
+NODE:F LEVEL:0 LINE:29 "main(void)"

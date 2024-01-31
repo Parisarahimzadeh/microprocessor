@@ -1264,8 +1264,8 @@ _0x4:
 ; 0000 0027         unsigned char input = PINA;
 ; 0000 0028 
 ; 0000 0029 
-; 0000 002A         unsigned char digit1 = sevenSegmentMap[input >> 4];
-; 0000 002B         unsigned char digit2 = sevenSegmentMap[input & 0x0F];
+; 0000 002A         unsigned char digit1 = sevenSegmentMap[input / 16];
+; 0000 002B         unsigned char digit2 = sevenSegmentMap[input % 16];
 ; 0000 002C 
 ; 0000 002D 
 ; 0000 002E         PORTB = digit1;
@@ -1275,16 +1275,20 @@ _0x4:
 ;	digit2 -> Y+0
 	IN   R30,0x19
 	STD  Y+2,R30
-	LDI  R31,0
-	CALL __ASRW4
+	LDD  R26,Y+2
+	LDI  R27,0
+	LDI  R30,LOW(16)
+	LDI  R31,HIGH(16)
+	CALL __DIVW21
 	SUBI R30,LOW(-_sevenSegmentMap)
 	SBCI R31,HIGH(-_sevenSegmentMap)
 	LD   R30,Z
 	STD  Y+1,R30
 	LDD  R30,Y+2
 	LDI  R31,0
-	ANDI R30,LOW(0xF)
-	ANDI R31,HIGH(0xF)
+	LDI  R26,LOW(15)
+	LDI  R27,HIGH(15)
+	CALL __MANDW12
 	SUBI R30,LOW(-_sevenSegmentMap)
 	SBCI R31,HIGH(-_sevenSegmentMap)
 	LD   R30,Z
@@ -1327,17 +1331,74 @@ __delay_ms0:
 __delay_ms1:
 	ret
 
-__ASRW4:
-	ASR  R31
-	ROR  R30
-__ASRW3:
-	ASR  R31
-	ROR  R30
-__ASRW2:
-	ASR  R31
-	ROR  R30
-	ASR  R31
-	ROR  R30
+__ANEGW1:
+	NEG  R31
+	NEG  R30
+	SBCI R31,0
+	RET
+
+__DIVW21U:
+	CLR  R0
+	CLR  R1
+	LDI  R25,16
+__DIVW21U1:
+	LSL  R26
+	ROL  R27
+	ROL  R0
+	ROL  R1
+	SUB  R0,R30
+	SBC  R1,R31
+	BRCC __DIVW21U2
+	ADD  R0,R30
+	ADC  R1,R31
+	RJMP __DIVW21U3
+__DIVW21U2:
+	SBR  R26,1
+__DIVW21U3:
+	DEC  R25
+	BRNE __DIVW21U1
+	MOVW R30,R26
+	MOVW R26,R0
+	RET
+
+__DIVW21:
+	RCALL __CHKSIGNW
+	RCALL __DIVW21U
+	BRTC __DIVW211
+	RCALL __ANEGW1
+__DIVW211:
+	RET
+
+__MANDW12:
+	CLT
+	SBRS R31,7
+	RJMP __MANDW121
+	RCALL __ANEGW1
+	SET
+__MANDW121:
+	AND  R30,R26
+	AND  R31,R27
+	BRTC __MANDW122
+	RCALL __ANEGW1
+__MANDW122:
+	RET
+
+__CHKSIGNW:
+	CLT
+	SBRS R31,7
+	RJMP __CHKSW1
+	RCALL __ANEGW1
+	SET
+__CHKSW1:
+	SBRS R27,7
+	RJMP __CHKSW2
+	COM  R26
+	COM  R27
+	ADIW R26,1
+	BLD  R0,0
+	INC  R0
+	BST  R0,0
+__CHKSW2:
 	RET
 
 ;END OF CODE MARKER
